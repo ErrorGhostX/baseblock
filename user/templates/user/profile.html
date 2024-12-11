@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="flex flex-col lg:flex-row lg:space-x-8 bg-gray-900 text-purple-400 py-8 px-4">
+    <!-- Левая колонка -->
+    <div class="lg:w-1/3 bg-gray-800 p-6 rounded-lg shadow-lg">
+        <img src="{{ profile.profile_image.url }}" alt="Аватар" class="w-32 h-32  mx-auto mb-4">
+        <h1 class="text-center text-2xl text-purple-300 mb-2">{{ profile.username }}</h1>
+        <p class="text-center text-purple-200 mb-4">Ролевое имя: {{ profile.get_full_name }}</p>
+        <ul class="space-y-2 text-sm">
+            <li><strong>Роль:</strong> {{ profile.donate.name }}</li>
+            <li><strong>Описание:</strong> {{ profile.description }}</li>
+            <li><strong>Город:</strong> {{ profile.city }}</li>
+            <li><strong>Социальный рейтинг:</strong> {{ profile.social_rating }}</li>
+            <li><strong>Почта:</strong> {{ profile.email }}</li>
+            <li><strong>Дата регистрации:</strong> {{ profile.date_joined|date:"d M Y" }}</li>
+        </ul>
+        <div class="mt-6 text-center space-x-4">
+            {% if profile == request.user %}
+                <a href="{% url 'profile_edit' username=profile.username %}" class="inline-block bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg shadow-md">
+                    Изменить данные
+                </a>
+
+            <a href="{% url 'logout' %}" class="inline-block bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow-md">
+                Выйти
+            </a>
+                        {% endif %}
+        </div>
+    </div>
+
+    <!-- Правая колонка -->
+    <div class="lg:w-2/3 space-y-6">
+        <!-- Пройденные ивенты -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold text-purple-300 mb-4">Пройденные ивенты:</h3>
+            <div class="max-h-64 overflow-y-auto space-y-4">
+                {% for event in profile.events.all %}
+                    <div class="border-b border-gray-700 pb-2">
+                        <h4 class="font-bold">
+                            <a href="{% url 'event_detail' event.id %}" class="text-purple-400 hover:underline">
+                                {{ event.title }}
+                            </a>
+                        </h4>
+                        <p class="text-sm text-purple-200">{{ event.description }}</p>
+                        <p class="text-sm text-gray-400">Дата: {{ event.date }} | Время: {{ event.time }}</p>
+                    </div>
+                {% empty %}
+                    <p class="text-gray-400">Нет пройденных ивентов.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+        <!-- Судимости -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold text-purple-300 mb-4">Судимости:</h3>
+            <div class="max-h-64 overflow-y-auto space-y-2">
+                {% if user.convictions.all %}
+                    {% for conviction in user.convictions.all %}
+                        <p class="text-sm text-purple-200">{{ conviction.description }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-gray-400">Нет судимостей.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

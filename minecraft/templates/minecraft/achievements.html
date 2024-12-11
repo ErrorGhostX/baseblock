@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">{{ title }}</h1>
+    
+    <ul class="space-y-6">
+        {% for achievement in achievements %}
+            <li class="bg-gray-800 p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-purple-300">{{ achievement.name }}</h2>
+                <p class="text-gray-400 mt-2">{{ achievement.description }}</p>
+                <p class="mt-4 text-sm text-gray-500"><strong>Получено:</strong> {{ achievement.earned_date }}</p>
+            </li>
+        {% empty %}
+            <p class="text-center text-gray-500">У вас пока нет достижений.</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

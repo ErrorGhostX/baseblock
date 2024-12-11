@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="event-detail-container py-8 bg-gray-900 min-h-screen">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-wrap">
+            <!-- Левая часть: информация об ивенте -->
+            <div class="left-side w-full lg:w-2/3 lg:pr-8">
+                <h1 class="event-title text-4xl font-bold text-white mb-4">{{ event.title }}</h1>
+
+                <!-- Автор и место проведения -->
+                <div class="event-meta text-gray-300 mb-6">
+                    <p><strong>Автор:</strong>
+                        <a href="{% url 'profile' event.author.username %}" class="text-purple-400 hover:underline">
+                            {{ event.author.username }}
+                        </a>
+                    </p>
+                    <p><strong>Место проведения:</strong> {{ event.location }}</p>
+                    <p><strong>Координаты:</strong> {{ event.coordinates }}</p>
+                    <p><strong>Дата:</strong> {{ event.date }}</p>
+                    <p><strong>Время:</strong> {{ event.time }}</p>
+                </div>
+
+                <!-- Описание ивента -->
+                <p class="event-description text-gray-200 mb-6">
+                    <strong>Описание:</strong> {{ event.description }}
+                </p>
+
+                <!-- Список участников -->
+                <h3 class="text-xl text-white mb-2">Участники:</h3>
+                <ul class="participants-list max-h-64 overflow-y-auto space-y-2 mb-6">
+                    {% for participant in event.participants.all %}
+                        <li class="participant-item bg-gray-800 p-3 rounded-lg text-white">
+                            <a href="{% url 'profile' participant.username %}" class="text-purple-400 hover:underline">
+                                {{ participant.username }}
+                            </a>
+                        </li>
+                    {% empty %}
+                        <li class="bg-gray-800 p-3 rounded-lg text-white">Нет участников</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Правая часть: карта -->
+            <div class="right-side w-full lg:w-1/3 mt-8 lg:mt-0">
+                <h2 class="text-2xl font-bold text-white mb-4">Карта</h2>
+                <iframe
+                    src="https://map.baseblock.ru/#"
+                    class="w-full h-[400px] border-none rounded-lg shadow-lg"
+                    title="Карта">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Кнопки действий -->
+        <div class="mt-6 text-center space-y-4">
+            <!-- Принять участие -->
+            <form method="POST" action="{% url 'event_mark_attendance' event.id %}">
+                {% csrf_token %}
+                <button class="attend-btn bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-md transition" type="submit">
+                    Я приду на ивент
+                </button>
+            </form>
+
+            <!-- Отказаться от участия -->
+            <form method="POST" action="{% url 'leave_event' event.id %}">
+                {% csrf_token %}
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded-lg shadow-md transition">
+                    Не участвовать в ивенте
+                </button>
+            </form>
+
+            <!-- Вернуться к списку ивентов -->
+            <a href="{% url 'events' %}" class="back-to-events-btn inline-block bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg shadow-md transition">
+                Назад к ивентам
+            </a>
+        </div>
+
+        <!-- Фотографии: Слайдер -->
+        <div class="images-section mt-10">
+            <h2 class="text-2xl font-bold text-white mb-4">Фотографии</h2>
+            <div class="swiper-container w-full h-full">
+                <div class="swiper-wrapper">
+                    {% if event.image1 %}
+                        <div class="swiper-slide">
+                            <img src="{{ event.image1.url }}" alt="Image 1" class="w-full h-full object-cover rounded-lg shadow-lg">
+                        </div>
+                    {% endif %}
+                    {% if event.image2 %}
+                        <div class="swiper-slide">
+                            <img src="{{ event.image2.url }}" alt="Image 2" class="w-full h-full object-cover rounded-lg shadow-lg">
+                        </div>
+                    {% endif %}
+                    {% if event.image3 %}
+                        <div class="swiper-slide">
+                            <img src="{{ event.image3.url }}" alt="Image 3" class="w-full h-full object-cover rounded-lg shadow-lg">
+                        </div>
+                    {% endif %}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Swiper.js -->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".swiper-container", {
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            slidesPerView: 1, // Показываем одно изображение за раз
+            spaceBetween: 10, // Отступ между слайдами
+            autoplay: {
+                delay: 5000, // Автоперелистывание изображений с задержкой 5 секунд
+                disableOnInteraction: false,
+            },
+        });
+    });
+</script>
+
+{% endblock %}

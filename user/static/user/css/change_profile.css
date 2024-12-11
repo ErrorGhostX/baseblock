@@ -1,0 +1,74 @@
+body {
+    background-color: #2e2e2e;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #52345a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(38, 8, 53, 0.81);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e6cfff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffcc00;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #954ddd;
+    border-radius: 5px;
+    background-color: #954ddd;
+    color: #fff;
+}
+
+input[type="file"] {
+    padding: 5px;
+    border: none;
+    background-color: rgba(38, 8, 53, 0.81);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus {
+    border-color: #ff6767;
+    outline: none;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6767;
+    border: none;
+    border-radius: 5px;
+    color: #2e2e2e;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #ff6767;
+}

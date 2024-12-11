@@ -1,0 +1,126 @@
+{% load static %}
+
+<div id="chatbot-widget" class="fixed bottom-4 right-4 w-96 bg-purple-800 text-white rounded-lg shadow-lg p-6 transition-all duration-500">
+    <!-- Заголовок с кнопкой скрытия чата -->
+    <div class="flex justify-between items-center">
+        <h3 class="font-semibold text-xl">BaseBlockAI</h3>
+        <button 
+            type="button" 
+            id="toggle-chat" 
+            class="bg-transparent text-white px-2 py-1 rounded-lg focus:outline-none hover:text-purple-300"
+        >
+            ❯
+        </button>
+    </div>
+
+    <!-- Чат -->
+    <div id="chatbox" class="mt-2 text-sm h-72 overflow-y-scroll bg-gray-900 p-4 rounded-md">
+        <p>Привет! Чем я могу помочь?</p>
+    </div>
+
+    <!-- Форма ввода -->
+    <form id="chat-form" class="mt-4 flex space-x-2">
+        {% csrf_token %}
+        <input 
+            id="user-input" 
+            type="text" 
+            name="user_input"
+            placeholder="Введите сообщение..." 
+            required
+            class="flex-grow p-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-400"
+        >
+        <button 
+            type="submit" 
+            class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg"
+        >
+            ➤
+        </button>
+    </form>
+
+    <!-- Кнопка, чтобы вернуть чат -->
+    <div id="restore-chat" class="hidden fixed bottom-4 right-4 bg-purple-600 text-white p-2 rounded-full cursor-pointer hover:bg-purple-700">
+        😁
+    </div>
+</div>
+
+<!-- Подключаем JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Передаем URL в переменную для использования в chat.js
+    var chatUrl = "{% url 'chat' %}";
+    var username = "{{ user.username }}"; // Извлекаем имя пользователя из Django
+
+    $(document).ready(function() {
+        // Проверяем, был ли чат скрыт ранее
+        if (localStorage.getItem('chatHidden') === 'true') {
+            $('#chatbot-widget').css('opacity', '0').css('visibility', 'hidden');
+            $('#restore-chat').removeClass('hidden'); // Показать кнопку восстановления
+        }
+
+        // Логика кнопки для скрытия/показа чата
+        $('#toggle-chat').click(function() {
+            var chatWidget = $('#chatbot-widget');
+            if (chatWidget.css('visibility') === 'hidden') {
+                chatWidget.css('visibility', 'visible').animate({ opacity: 1 }, 500);
+                $('#restore-chat').addClass('hidden'); // Прячем кнопку восстановления
+                localStorage.setItem('chatHidden', 'false'); // Сохраняем состояние
+            } else {
+                chatWidget.animate({ opacity: 0 }, 500, function() {
+                    chatWidget.css('visibility', 'hidden');
+                    $('#restore-chat').removeClass('hidden'); // Показываем кнопку восстановления
+                });
+                localStorage.setItem('chatHidden', 'true'); // Сохраняем состояние
+            }
+        });
+
+        // Логика кнопки восстановления чата
+        $('#restore-chat').click(function() {
+            $('#chatbot-widget').css('visibility', 'visible').animate({ opacity: 1 }, 500);
+            $('#restore-chat').addClass('hidden'); // Прячем кнопку восстановления
+            localStorage.setItem('chatHidden', 'false'); // Сохраняем состояние
+        });
+
+        // Форма отправки сообщений
+        const chatbox = $("#chatbox");
+        const chatForm = $("#chat-form");
+        const userInput = $("#user-input");
+
+        chatForm.submit(function (event) {
+            event.preventDefault();
+            const message = userInput.val().trim();
+            if (!message) return;
+
+            appendMessage(username, message, "text-yellow");
+            userInput.val("");
+
+            // Создаем элемент для ответа бота
+            const aiResponseElement = $("<p>");
+            chatbox.append($("<strong>").text("BaseBlockAI:").css("color", "purple"));
+            chatbox.append(aiResponseElement);
+
+            $.ajax({
+                url: chatUrl,
+                type: "POST",
+                data: { user_input: message },
+                xhrFields: {
+                    onprogress: function (event) {
+                        const chunk = event.target.responseText;
+                        aiResponseElement.html(chunk);
+                        chatbox.scrollTop(chatbox[0].scrollHeight);
+                    },
+                },
+                success: function (response) {
+                    console.log("Сообщение успешно отправлено");
+                },
+                error: function () {
+                    aiResponseElement.html("Ошибка: не удалось получить ответ.");
+                },
+            });
+        });
+
+        function appendMessage(role, content, className) {
+            chatbox.append(`<p class="${className}"><strong>${role}:</strong> ${content}</p>`);
+            chatbox.scrollTop(chatbox[0].scrollHeight);
+        }
+    });
+</script>

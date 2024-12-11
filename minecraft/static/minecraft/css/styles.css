@@ -1,0 +1,377 @@
+{%load static%}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MinecraftFont';
+
+}
+@font-face {
+    font-family: 'MinecraftFont';
+    src: url('/static/minecraft/fonts/minecraft.ttf') format('truetype');
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #2e2e2e; /* Цвет фона, который будет виден, если изображение не загрузится */
+    color: #9d49ff;
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'MinecraftFont', sans-serif;
+    position: relative; /* Для позиционирования псевдоэлемента */
+    background-image: url('/static/minecraft/images/fon.png'); /* Путь с /static */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Псевдоэлемент для затемнения */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Черное затемнение с прозрачностью */
+    z-index: -1; /* Псевдоэлемент будет под контентом */
+}
+
+
+.logo img {
+    height: 60px;
+    width: 220px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(128, 0, 128, 1), rgba(128, 0, 128, 0)); /* От фиолетового сверху до прозрачного снизу */
+    padding: 20px 20px;
+    height: 90px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #8312f3;
+}
+
+.auth-buttons {
+    display: flex;
+    color: #954ddd;
+    gap: 10px;
+    border: none;
+}
+
+.login-btn,
+.profile-btn {
+    background-color: #4909b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover,
+.profile-btn:hover {
+    background-color: #580abc;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.server-monitoring {
+    width: 30%;
+    background-color: rgba(101, 38, 131, 0.13);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.content {
+    flex: 1;
+    /* Контент занимает оставшееся пространство */
+    padding: 20px;
+    /* Дополнительные отступы вокруг контента */
+}
+
+/* Стиль для больших контейнеров на других страницах */
+.content-container {
+    width: 80%;
+    /* Увеличиваем ширину контейнера */
+    background-color: #402d45;
+    padding: 40px;
+    /* Увеличиваем отступы */
+    border-radius: 8px;
+}
+
+.content-container h2 {
+    color: #7a07e8;
+    margin-bottom: 20px;
+}
+
+.content-container p {
+    color: #e6cfff;
+    line-height: 1.8;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #e6cfff;
+    margin-top: auto;
+}
+
+
+/* Контейнер для центрирования содержимого */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Контейнер для iframe, чтобы он был по центру */
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2250vh; /* Высота контейнера для iframe */
+}
+
+/* Стиль для iframe */
+.rules-iframe {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    height: 100%; /* Высота, чтобы iframe заполнил контейнер */
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Общие стили для контейнера ивентов */
+.events-container {
+    padding: 20px;
+}
+
+/* Контейнер для заголовка и кнопки создания ивента */
+.header-container {
+    text-align: center; /* Центрирование контента */
+    margin-bottom: 30px; /* Отступ снизу */
+}
+
+.header-container h1 {
+    font-size: 2rem;
+    color: #cc38ff;
+}
+
+.create-event-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.create-event-btn:hover {
+    background-color: #218838;
+}
+
+/* Стили для списка ивентов */
+.events-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Расположение ивентов слева направо */
+}
+
+/* Карточка ивента */
+.event-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+.event-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Ссылка "Подробнее" */
+.event-link {
+    display: inline-block;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.event-link:hover {
+    background-color: #0056b3;
+}
+
+
+/* Кнопка "Я участвую" */
+.attend-btn {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.attend-btn:hover {
+    background-color: #218838;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Контейнер для страницы с деталями ивента */
+.event-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Заголовок ивента */
+.event-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Метаданные ивента */
+.event-meta p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Описание ивента */
+.event-description {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Список участников */
+.participants-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.participant-item {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Кнопка "Назад к ивентам" */
+.back-to-events-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Эффект при наведении на кнопку */
+.back-to-events-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+

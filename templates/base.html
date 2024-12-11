@@ -1,0 +1,53 @@
+{% load tailwind_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'minecraft/css/font.css' %}">
+
+    <title>{{ title }}</title>
+    {% tailwind_css %}
+</head>
+
+<body class="bg-gray-900 text-purple-400 flex flex-col min-h-screen font-minecraft" style="background-image: url('{% static "minecraft/images/fon.png" %}'); background-size: cover; background-position: center;">
+
+    <!-- Навигационная панель -->
+    {% include "navbar.html" %}
+
+    <!-- Основной контент -->
+    <main class="flex-grow">
+
+        {% block content %}
+
+        {% endblock content %}
+
+    </main>
+    <button id="restore-chat" class="hidden fixed bottom-4 right-4 text-white bg-purple-600 p-3 rounded-full cursor-pointer hover:bg-purple-700">
+        😁
+    </button>
+    <!-- Чат-бот -->
+   {% include "minecraft/chat.html" %} 
+
+
+    <!-- Футер -->
+   <!-- {% include "footer.html" %}-->
+    
+
+    <!-- JavaScript -->
+    {% block javascripts %}
+
+    <script>
+
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    {% endblock javascripts %}
+</body>
+
+</html>

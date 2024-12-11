@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Правила сервера{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto py-8 px-4">
+    <h1 class="text-3xl font-bold text-purple-300 mb-6">Правила сервера</h1>
+    <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <div class="iframe-container relative w-full overflow-hidden pb-[75%] rounded-lg">
+            <iframe 
+                src="https://docs.google.com/document/d/e/2PACX-1vTcAoBAqnLJ63vWIcR8qJ6XJZ8IYdn08jzRUa-Rml_aiahY7fRPJpOD5tdYWw7KfA/pub?embedded=true" 
+                class="absolute top-0 left-0 w-full h-full border-none rounded-lg"
+                title="Правила сервера">
+            </iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}

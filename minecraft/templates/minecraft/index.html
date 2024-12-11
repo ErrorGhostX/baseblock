@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Основной контент -->
+
+<!-- Контейнер новостей -->
+<section class="news-container max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-purple-300 mb-6">Новости</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for new in news %}
+        <!-- Оборачиваем весь блок новости в тег <a>, чтобы он был кликабельным -->
+        <a href="{{ new.get_absolute_url }}" class="news-item block bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-800">
+            <h3 class="text-xl font-bold text-purple-200 mb-3">{{ new.title }}</h3>
+            <p class="text-purple-300 text-sm mb-4">{{ new.text|truncatewords:40 }}</p>
+            {% if new.image %}
+            <img src="{{ new.image.url }}" alt="{{ new.title }}" class="w-full h-40 object-cover rounded mb-4">
+            {% endif %}
+            <!-- Кнопка "Посмотреть новость" теперь будет внутри блока -->
+
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Контейнер мониторинга серверов -->
+<section class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-purple-300 mb-6">Мониторинг серверов</h2>
+    <div class="flex flex-col gap-4">
+        {% for server in servers %}
+        <div class="server-item bg-gray-700 p-4 rounded shadow hover:shadow-lg transition-shadow">
+            <p class="text-purple-300 text-lg">Онлайн сервера: {{ server }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock content %}
