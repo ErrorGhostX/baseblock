@@ -1,0 +1,6 @@
+*.venv
+*db.sqlite3
+media/media/news/*
+media/media/profiles/*
+media/donate/*
+**__pycache__
