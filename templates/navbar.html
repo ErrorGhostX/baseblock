@@ -1,27 +1,27 @@
 {% load static %}
-<nav class="bg-gradient-to-r from-purple-700 to-purple-900 flex items-center justify-between p-5 h-24">
+<nav class=" flex items-center justify-between p-8 h-50">
 
-
-    <!-- Логотип -->
+    <!-- Логотип 
     <div class="logo">
         <img src="{% static 'minecraft/images/baseblock.png' %}" alt="Логотип проекта" class="h-16">
-    </div>
-    <!-- Бургер-меню -->
-    <div class="relative">
-        <button id="menu-toggle" class="text-white focus:outline-none">
-            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
-        <!-- Скрытое меню -->
-        <ul id="menu" class="absolute right-0 top-16 bg-purple-900 text-white shadow-lg rounded-lg w-48 hidden flex-col space-y-2 p-4">
+    </div>-->
+        <!-- Бургер-меню -->
+        <div class="flex">
+            <button id="menu-toggle" class="fixed top-5 right-4 text-white bg-purple-600 p-3 cursor-pointer hover:bg-purple-700 focus:outline-none">
+                <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+
+          <!-- Скрытое меню -->
+           <ul id="menu" class="absolute right-0 top-16 bg-purple-900 text-white shadow-lg rounded-lg w-48 hidden flex-col space-y-2 p-4">
             <li><a href="{% url 'home' %}" class="block hover:text-purple-300 transition">Новости</a></li>
             <li><a href="{% url 'events' %}" class="block hover:text-purple-300 transition">Ивенты</a></li>
             <li><a href="{% url 'about' %}" class="block hover:text-purple-300 transition">О сервере</a></li>
             <li><a href="{% url 'contacts' %}" class="block hover:text-purple-300 transition">Контакты</a></li>
             <li><a href="{% url 'donate' %}" class="block hover:text-purple-300 transition">Донат</a></li>
             <li><a href="{% url 'rules' %}" class="block hover:text-purple-300 transition">Правила</a></li>
-            <!--<li><a href="{% url 'advancements' %}" class="block hover:text-purple-300 transition">Достижения</a></li>-->
+            <li><a href="{% url 'user_list' %}" class="block hover:text-purple-300 transition">Игроки</a></li>
             <li><a href="{% url 'map' %}" class="block hover:text-purple-300 transition">Карта</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'profile' user.username %}" class="block hover:text-purple-300 transition">Профиль</a></li>
@@ -29,5 +29,12 @@
                 <li><a href="{% url 'login' %}" class="block hover:text-purple-300 transition">Войти</a></li>
             {% endif %}
         </ul>
+        <script>
+
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
     </div>
 </nav>
