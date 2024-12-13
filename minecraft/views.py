@@ -75,16 +75,6 @@ class RulesPage(TemplateView):
     extra_context = {"title": "Правила"}
 
 
-class AchievementsPage(ListView):
-    template_name = "minecraft/achievements.html"
-    model = Achievement
-    context_object_name = "achievements"
-    extra_context = {"title": "Достижения"}
-
-    def get_queryset(self):
-        return Achievement.objects.filter(user=self.request.user)
-
-
 def event_list(request):
     events = Event.objects.filter(is_active=True)  # Фильтруем активные ивенты
     form = EventAttendanceForm(request.POST or None)
@@ -149,4 +139,17 @@ def user_list(request):
     users = get_user_model().objects.all()  # Получаем всех пользователей
     return render(request, 'minecraft/user_list.html', {'users': users})
 
+
+
+
+
+#Нна будущее
+class AchievementsPage(ListView):
+    template_name = "minecraft/achievements.html"
+    model = Achievement
+    context_object_name = "achievements"
+    extra_context = {"title": "Достижения"}
+
+    def get_queryset(self):
+        return Achievement.objects.filter(user=self.request.user)
 

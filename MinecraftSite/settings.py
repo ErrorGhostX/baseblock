@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "user",
     "tailwind",
     "theme",
-    'django_browser_reload'
+    'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -120,7 +120,19 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+#PASSWORD_HASHERS = [
+#   'u.custom_hashers.BCrypt2aPasswordHasher',  # Замените myapp на имя вашего приложения
+#]
+PASSWORD_HASHERS = [
+    'user.custom_hashers.BCrypt2aPasswordHasher',
+]
 
+
+
+
+#AUTHENTICATION_BACKENDS = [
+#   'user.bcrypt_auth_backend.BcryptAuthenticationBackend',  # Указываем путь к нашему классу
+#]
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -131,6 +143,8 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+
+
 
 
 # Static files (CSS, JavaScript, Images)

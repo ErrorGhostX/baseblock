@@ -1,42 +1,56 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block style %}
-<link rel="stylesheet" href="{% static 'user/css/register.css' %}">
-{% endblock style %}
-
 {% block content %}
-<div class="flex justify-center items-center min-h-screen ">
-    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 class="text-center text-3xl font-bold text-purple-300 mb-6">Войти</h1>
-        <form method="post" class="space-y-6">
-            {% csrf_token %}
-            
-            {% for field in form %}
-                <div class="form-group">
-                    <label for="{{ field.id_for_label }}" class="block text-sm font-semibold text-purple-300 mb-2">{{ field.label }}</label>
-                    <div class="mb-4">
-                        {{ field }}
-                    </div>
-                    {% if field.errors %}
-                        <div class="errorlist mt-2 text-sm text-red-500">
-                            {% for error in field.errors %}
-                                <p class="error">{{ error }}</p>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="flex justify-end w-full p-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+            <h2 class="text-2xl font-bold text-gray-700 text-center mb-6">Войти в систему</h2>
+            <form method="POST" action="/login/">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label for="username" class="block text-gray-600 font-medium mb-2">Имя пользователя</label>
+                    <input type="text" name="username" id="username" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    {% if form.username.errors %}
+                        <div class="text-red-500 text-sm mt-2">
+                            {% for error in form.username.errors %}
+                                <p>{{ error }}</p>
                             {% endfor %}
                         </div>
                     {% endif %}
                 </div>
-            {% endfor %}
-            
-            <button type="submit" class="w-full py-2 px-4 bg-purple-500 text-white rounded-lg shadow-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400">
-                Войти
-            </button>
-        </form>
-
-        <!-- Кнопка регистрации -->
-        <div class="mt-4 text-center">
-            <p class="text-sm text-purple-300">Нет аккаунта? <a href="{% url 'register' %}" class="text-purple-400 hover:underline">Зарегистрируйтесь</a></p>
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-600 font-medium mb-2">Пароль</label>
+                    <input type="password" name="password" id="password" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    {% if form.password.errors %}
+                        <div class="text-red-500 text-sm mt-2">
+                            {% for error in form.password.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                {% if form.non_field_errors %}
+                    <div class="text-red-500 text-sm mt-2">
+                        {% for error in form.non_field_errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">Войти</button>
+            </form>
+            <div class="text-center mt-4">
+                <a href="/register/" class="text-blue-500 hover:underline">Регистрация</a>
+            </div>
         </div>
     </div>
-</div>
+
+
+    <div class="mt-6 p-6 bg-gray-200 rounded-lg shadow-lg max-w-md mx-auto">
+        <h3 class="text-lg font-semibold text-gray-700">Информация о пароле</h3>
+        <p><strong>Пароль из базы данных:</strong> {{ user_password }}</p>
+        <p><strong>Захешированный пароль для проверки:</strong> {{ hashed_password_for_check }}</p>
+    </div>
+
+</body>
 {% endblock content %}
