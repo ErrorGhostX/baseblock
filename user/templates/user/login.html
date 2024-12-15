@@ -1,12 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block style %}
-<link rel="stylesheet" href="{% static 'user/css/register.css' %}">
-{% endblock style %}
+
 
 {% block content %}
-<div class="flex justify-center items-center min-h-screen ">
+<div class="flex justify-center items-center ">
     <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
         <h1 class="text-center text-3xl font-bold text-purple-300 mb-6">Войти</h1>
         <form method="post" class="space-y-6">
@@ -33,10 +31,7 @@
             </button>
         </form>
 
-        <!-- Кнопка регистрации -->
-        <div class="mt-4 text-center">
-            <p class="text-sm text-purple-300">Нет аккаунта? <a href="{% url 'register' %}" class="text-purple-400 hover:underline">Зарегистрируйтесь</a></p>
-        </div>
+
     </div>
 </div>
 {% endblock content %}

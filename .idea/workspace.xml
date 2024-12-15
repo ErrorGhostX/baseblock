@@ -4,14 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682ba3b4-aad5-4e8f-8d1c-ae0fc3e4a742" name="Changes" comment="ЛУЧШАЯ ВЕРСИЯ, обновленный интерфейс:, работающий bCrypt хеширование для проверки пароля с майнкрафт аккаунта и многое другое">
-      <change afterPath="$PROJECT_DIR$/user/context_processors.py" afterDir="false" />
+    <list default="true" id="72f6a783-0b70-4891-9bef-fa0a1f3ba625" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/MinecraftSite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MinecraftSite.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MinecraftSite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MinecraftSite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/static/minecraft/css/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/static/minecraft/css/font.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/event_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/event_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/events.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/rules.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/rules.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/user_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/static/css/dist/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/static/css/dist/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theme/static_src/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/theme/static_src/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,71 +40,40 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" show_ignored="true">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
-  </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-        <option value="package.json" />
-        <option value="HTML File" />
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="master" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="tl+limbo" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="MIXED" />
-    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ErrorGhostX&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ErrorGhostX/baseblock.git&quot;,
+    &quot;accountId&quot;: &quot;3181f512-a6f7-44c2-946c-f704ce287d7e&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2pAsXWINluJNVsqrRD5mdhDHH5C" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2qFqjW21rN50LmqaEV6uUa6pVY4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
     "Django Server.MinecraftSite.executor": "Run",
-    "Python.manage.executor": "Run",
-    "Python.signals.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "sql+limbo",
-    "last_opened_file_path": "A:/Studying/RINH_3_KURS/web - програмирование/Курсач/MinecraftSite/minecraft/static/minecraft/images",
-    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -93,69 +83,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\static\minecraft\images" />
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft" />
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\static\minecraft\images" />
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\templates\minecraft" />
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\static\minecraft\docs" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\static\minecraft\" />
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\media\media" />
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\templates\minecraft" />
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\static\minecraft" />
-      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\static\minecraft\js" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Django Server.MinecraftSite">
-    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MinecraftSite" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="signals" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MinecraftSite" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/user" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user/signals.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="MinecraftSite" type="Python.DjangoServer" factoryName="Django server">
       <module name="MinecraftSite" />
       <option name="ENV_FILES" value="" />
@@ -173,7 +101,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
-      <option name="host" value="localhost" />
+      <option name="host" value="0.0.0.0" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -182,20 +110,6 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Django Server.MinecraftSite" />
-      <item itemvalue="Python.signals" />
-      <item itemvalue="Python.manage" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.signals" />
-        <item itemvalue="Python.manage" />
-        <item itemvalue="Python.manage" />
-        <item itemvalue="Python.manage" />
-        <item itemvalue="Python.manage" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -208,150 +122,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="682ba3b4-aad5-4e8f-8d1c-ae0fc3e4a742" name="Changes" comment="" />
-      <created>1732220254316</created>
+      <changelist id="72f6a783-0b70-4891-9bef-fa0a1f3ba625" name="Changes" comment="" />
+      <created>1734268809424</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732220254316</updated>
-      <workItem from="1732220255356" duration="1129000" />
-      <workItem from="1732222775172" duration="22471000" />
-      <workItem from="1732494408727" duration="3037000" />
-      <workItem from="1732632535292" duration="14198000" />
-      <workItem from="1732832371094" duration="4467000" />
-      <workItem from="1732879285330" duration="1655000" />
-      <workItem from="1733126709193" duration="364000" />
-      <workItem from="1733238459848" duration="3785000" />
-      <workItem from="1733244366503" duration="8902000" />
-      <workItem from="1733322235801" duration="2484000" />
-      <workItem from="1733384012707" duration="1256000" />
-      <workItem from="1733520749847" duration="5884000" />
-      <workItem from="1733535642493" duration="4478000" />
-      <workItem from="1733595066240" duration="8330000" />
-      <workItem from="1733622930384" duration="5329000" />
-      <workItem from="1733688461600" duration="13451000" />
-      <workItem from="1733729997934" duration="1898000" />
-      <workItem from="1733734654867" duration="603000" />
-      <workItem from="1733735576521" duration="303000" />
-      <workItem from="1733736290269" duration="3029000" />
-      <workItem from="1733756364847" duration="4545000" />
-      <workItem from="1733780948282" duration="16455000" />
-      <workItem from="1733837339797" duration="6433000" />
-      <workItem from="1733923390375" duration="5375000" />
-      <workItem from="1733948595996" duration="1843000" />
-      <workItem from="1733950596785" duration="1501000" />
-      <workItem from="1733952939009" duration="521000" />
-      <workItem from="1733953471129" duration="506000" />
-      <workItem from="1733953988199" duration="138000" />
-      <workItem from="1733954138960" duration="33000" />
-      <workItem from="1733954181450" duration="139000" />
-      <workItem from="1733954332312" duration="154000" />
-      <workItem from="1733954495487" duration="137000" />
-      <workItem from="1733954640135" duration="87000" />
-      <workItem from="1733954733684" duration="158000" />
-      <workItem from="1733959475830" duration="738000" />
-      <workItem from="1733961613892" duration="1424000" />
-      <workItem from="1734012024432" duration="1543000" />
-      <workItem from="1734016284948" duration="25825000" />
-      <workItem from="1734093259007" duration="12286000" />
-      <workItem from="1734119046063" duration="2005000" />
-      <workItem from="1734121097570" duration="2149000" />
-      <workItem from="1734181695190" duration="4726000" />
-      <workItem from="1734232540542" duration="11281000" />
+      <updated>1734268809424</updated>
+      <workItem from="1734268811064" duration="84000" />
+      <workItem from="1734268905749" duration="19113000" />
     </task>
-    <task id="LOCAL-00001" summary="init">
-      <option name="closed" value="true" />
-      <created>1733951073706</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1733951073706</updated>
-    </task>
-    <task id="LOCAL-00002" summary="init">
-      <option name="closed" value="true" />
-      <created>1733953142100</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1733953142100</updated>
-    </task>
-    <task id="LOCAL-00003" summary="init">
-      <option name="closed" value="true" />
-      <created>1733953330736</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1733953330736</updated>
-    </task>
-    <task id="LOCAL-00004" summary="бургер меню тест">
-      <option name="closed" value="true" />
-      <created>1733953675001</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1733953675001</updated>
-    </task>
-    <task id="LOCAL-00005" summary="ЛУЧШАЯ ВЕРСИЯ, обновленный интерфейс:, работающий bCrypt хеширование для проверки пароля с майнкрафт аккаунта и многое другое">
-      <option name="closed" value="true" />
-      <created>1734239471187</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1734239471187</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
-    <MESSAGE value="бургер меню тест12" />
-    <MESSAGE value="бургер меню тест" />
-    <MESSAGE value="ЛУЧШАЯ ВЕРСИЯ, обновленный интерфейс:, работающий bCrypt хеширование для проверки пароля с майнкрафт аккаунта и многое другое" />
-    <option name="LAST_COMMIT_MESSAGE" value="ЛУЧШАЯ ВЕРСИЯ, обновленный интерфейс:, работающий bCrypt хеширование для проверки пароля с майнкрафт аккаунта и многое другое" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/minecraft/forms.py</url>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/minecraft/templates/minecraft/contacts.html</url>
-          <line>1</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MinecraftSite$urls.coverage" NAME="urls Coverage Results" MODIFIED="1734126353630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user" />
-    <SUITE FILE_PATH="coverage/MinecraftSite$signals.coverage" NAME="signals Coverage Results" MODIFIED="1734126000486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user" />
-    <SUITE FILE_PATH="coverage/MinecraftSite$manage.coverage" NAME="manage Coverage Results" MODIFIED="1733536231685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <div class="flex flex-col gap-2 ">
+    <!-- Контейнер мониторинга серверов -->
+<section class="w-full max-w-6xl mx-auto bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-purple-300 mb-6">Мониторинг серверов</h2>
+    <div class="flex flex-col gap-4">
+        {% for server in servers %}
+        <div class="server-item bg-gray-700 p-4 rounded shadow hover:shadow-lg transition-shadow">
+            <p class="text-purple-300 text-lg">Онлайн BaseBlock {{ server.name }}: {{ server.online }}</p>
+
+        </div>
+        {% endfor %}
+    </div>
+</section>
 <!-- Контейнер новостей -->
-<section class="news-container max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+<section class=" w-full max-w-6xl mx-auto bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-lg">
     <h2 class="text-2xl font-bold text-purple-300 mb-6">Новости</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {% for new in news %}
@@ -19,17 +32,7 @@
         {% endfor %}
     </div>
 </section>
-
-<!-- Контейнер мониторинга серверов -->
-<section class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
-    <h2 class="text-2xl font-bold text-purple-300 mb-6">Мониторинг серверов</h2>
-    <div class="flex flex-col gap-4">
-        {% for server in servers %}
-        <div class="server-item bg-gray-700 p-4 rounded shadow hover:shadow-lg transition-shadow">
-            <p class="text-purple-300 text-lg">Онлайн сервера: {{ server }}</p>
-        </div>
-        {% endfor %}
     </div>
-</section>
+
 
 {% endblock content %}

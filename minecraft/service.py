@@ -20,7 +20,7 @@ def get_online(server_ip: str, port: int) -> int:
         return 0
 
 
-def get_online_servers(lst: list[tuple[str, int]]) -> list[int]:
+def get_online_servers(lst: list[tuple[str, str, int]]) -> list[int]:
     """
     Возвращает список онлайна серверов
 
@@ -31,6 +31,7 @@ def get_online_servers(lst: list[tuple[str, int]]) -> list[int]:
         list[int]: Список онлайна серверов. Если сервер недоступен, значение онлайна будет 0.
     """
     onlines = []
-    for host, port in lst:
-        onlines.append(get_online(host, port))
+    for name, host, port in lst:
+        server = { "name": name, "online": get_online(host, port) }
+        onlines.append(server)
     return onlines

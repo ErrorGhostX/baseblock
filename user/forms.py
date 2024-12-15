@@ -8,8 +8,15 @@ from django.forms import ModelForm
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=150, label='Имя пользователя')
-    password = forms.CharField(widget=forms.PasswordInput, label='Пароль')
+    username = forms.CharField(
+        max_length=150,
+        label="Имя профиля",
+        widget=forms.TextInput(attrs={"class": "w-full p-2 bg-gray-900 border border-purple-600 rounded-lg"})
+    )
+
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={"class": "w-full p-2 bg-gray-900 border border-purple-600 rounded-lg"}),
+        label='Пароль')
 
 
 class EditProfileForm(ModelForm):

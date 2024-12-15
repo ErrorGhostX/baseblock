@@ -7,8 +7,12 @@ def user_profile(request):
     """
     if request.user.is_authenticated:
         try:
-            profile = request.profile # Предполагается, что есть связь OneToOneField с моделью Profile
-            return {'profile': profile}
+            # Если пользователь аутентифицирован, передаем URL изображения профиля
+            profile_image = request.user.profile_image.url
+            return {'profile_image': profile_image}
         except AttributeError:
-            pass
-    return {'profile': None}
+            # Если у пользователя нет profile_image
+            return {'profile_image': settings.STATIC_URL + "default_avatar.png"}  # Указываем путь к изображению по умолчанию
+    # Для анонимных пользователей
+    return {'profile_image': settings.STATIC_URL + "default_avatar.png"}
+

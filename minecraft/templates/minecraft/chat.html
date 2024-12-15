@@ -1,6 +1,6 @@
 {% load static %}
 
-<div id="chatbot-widget" class="fixed bottom-4 right-4 w-96 bg-purple-800 text-white rounded-lg shadow-lg p-6 transition-all duration-500">
+<div id="chatbot-widget" class="fixed bottom-4 mx-1 right-0 lg:right-4 lg:w-96 bg-purple-800 text-white rounded-lg shadow-lg p-6 transition-all duration-500">
     <!-- Заголовок с кнопкой скрытия чата -->
     <div class="flex justify-between items-center">
         <h3 class="font-semibold text-xl">BaseBlockAI</h3>
@@ -19,7 +19,7 @@
     </div>
 
     <!-- Форма ввода -->
-    <form id="chat-form" class="mt-4 flex space-x-2">
+    <form id="chat-form" class="mt-4 flex gap-2">
         {% csrf_token %}
         <input 
             id="user-input" 

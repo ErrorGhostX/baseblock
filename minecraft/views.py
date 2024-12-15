@@ -14,16 +14,24 @@ from django.contrib import messages
 
 class HomePage(ListView):
     template_name = "minecraft/index.html"
-    news = {
-        "title": "BaseBlock",
-        "servers": get_online_servers([("188.190.219.169", "25577"),("188.190.219.169", "36656")]),
-    }
-    allow_empty = True
     model = News
     context_object_name = "news"
+    allow_empty = True
 
     def get_queryset(self):
         return News.objects.filter(is_published=True)
+
+    def get_context_data(self, **kwargs):
+        # Получаем базовый контекст из ListView
+        context = super().get_context_data(**kwargs)
+        # Добавляем список онлайна серверов в контекст
+
+        context["servers"] = get_online_servers([
+            ("Мини-игры", "188.190.219.169", 25577),
+            ("Выживание", "188.190.219.169", 25577),
+        ])
+        return context
+
 
 
 class AboutPage(TemplateView):
@@ -70,9 +78,6 @@ class EventsPage(ListView):
 
 
 
-class RulesPage(TemplateView):
-    template_name = "minecraft/rules.html"
-    extra_context = {"title": "Правила"}
 
 
 def event_list(request):
@@ -89,13 +94,21 @@ def event_list(request):
 
     return render(request, 'minecraft/events.html', {'events': events, 'form': form})
 
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+
+@login_required(login_url='login')  # Указываем маршрут для страницы входа
 def events_page(request):
     events = Event.objects.filter(is_active=True).order_by('date', 'time')  # Получаем активные ивенты
     return render(request, 'minecraft/events.html', {'events': events})
 
+class RulesPage(TemplateView):
+    template_name = "minecraft/rules.html"
+    extra_context = {"title": "Правила"}
 
 @login_required
 def mark_attendance(request, event_id):
+
     event = get_object_or_404(Event, id=event_id)
     event.participants.add(request.user)
     return redirect('event_detail', event_id=event.id)
@@ -153,3 +166,22 @@ class AchievementsPage(ListView):
     def get_queryset(self):
         return Achievement.objects.filter(user=self.request.user)
 
+
+import requests
+
+
+def get_skin_url(self):
+    if not self.minecraft_username:
+        return "https://crafatar.com/renders/body/00000000000000000000000000000000?size=512&overlay"  # Заглушка
+
+    try:
+        # Получаем UUID игрока
+        response = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{self.minecraft_username}")
+        if response.status_code == 200:
+            uuid = response.json()["id"]
+            return f"https://crafatar.com/renders/body/{uuid}?size=512&overlay"
+    except Exception as e:
+        print(f"Ошибка при получении UUID: {e}")
+        pass
+
+    return "https://crafatar.com/renders/body/00000000000000000000000000000000?size=512&overlay"  # Заглушка
