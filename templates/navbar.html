@@ -1,21 +1,23 @@
+
 {% load static %}
+
 <nav class="items-center justify-between p-8 h-50">
 
         <!-- Логотип -->
-        <div class="logo flex justify-center items-center">
-            <img src="{% static 'minecraft/images/baseblock.png' %}" alt="Логотип проекта" class="h-28">
+        <div class="logo flex lg:justify-center items-center">
+            <img src="{% static 'minecraft/images/baseblock.png' %}" alt="Логотип проекта" class="w-40p">
         </div>
 
 
         
-        <div class="fixed top-5 right-10 h-5 w-5">
+        <div class="fixed top-5 right-2 h-15 w-15">
             <!-- Аватар -->
             {% if user.is_authenticated %}
-            <a href="{% url 'profile' user.username %}" class="">
-                <img src="{{ profile.profile_image.url }}" alt="Аватар" class="object-cover h-10 w-10 rounded-full">
+            <a href="{% url 'profile' user.username %}" class="fixed top-5 right-20 h-20 w-20">
+                <img src="{{ profile.profile_image.url }}" alt="Аватар" class="">
             </a>
             {% else %}
-            <a href="{% url 'login' %}" class="block w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
+            <a href="{% url 'login' %}" class=" w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
                 <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A8.978 8.978 0 0112 15c1.926 0 3.682.609 5.121 1.804M15 10a3 3 0 11-6 0 3 3 3 0 016 0zm9 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>

@@ -4,31 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682ba3b4-aad5-4e8f-8d1c-ae0fc3e4a742" name="Changes" comment="бургер меню тест">
-      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/ds.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/fon2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/fon2p.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/fon3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/tg.svg" afterDir="false" />
+    <list default="true" id="682ba3b4-aad5-4e8f-8d1c-ae0fc3e4a742" name="Changes" comment="ЛУЧШАЯ ВЕРСИЯ, обновленный интерфейс:, работающий bCrypt хеширование для проверки пароля с майнкрафт аккаунта и многое другое">
+      <change afterPath="$PROJECT_DIR$/user/context_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MinecraftSite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MinecraftSite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/media/MinecraftLogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/static/minecraft/images/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/static/minecraft/images/baseblock.png" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/baseblock.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/static/minecraft/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/create_event.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/create_event.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/event_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/event_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/events.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/static/css/dist/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/static/css/dist/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/edit_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme/static_src/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/theme/static_src/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +173,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
-      <option name="host" value="0.0.0.0" />
+      <option name="host" value="localhost" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -273,7 +256,7 @@
       <workItem from="1734119046063" duration="2005000" />
       <workItem from="1734121097570" duration="2149000" />
       <workItem from="1734181695190" duration="4726000" />
-      <workItem from="1734232540542" duration="6402000" />
+      <workItem from="1734232540542" duration="11281000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -307,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733953675001</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ЛУЧШАЯ ВЕРСИЯ, обновленный интерфейс:, работающий bCrypt хеширование для проверки пароля с майнкрафт аккаунта и многое другое">
+      <option name="closed" value="true" />
+      <created>1734239471187</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734239471187</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +331,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="бургер меню тест12" />
     <MESSAGE value="бургер меню тест" />
-    <option name="LAST_COMMIT_MESSAGE" value="бургер меню тест" />
+    <MESSAGE value="ЛУЧШАЯ ВЕРСИЯ, обновленный интерфейс:, работающий bCrypt хеширование для проверки пароля с майнкрафт аккаунта и многое другое" />
+    <option name="LAST_COMMIT_MESSAGE" value="ЛУЧШАЯ ВЕРСИЯ, обновленный интерфейс:, работающий bCrypt хеширование для проверки пароля с майнкрафт аккаунта и многое другое" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -224,4 +224,10 @@ def login_view(request):
     return render(request, './user/login.html')
 
 
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
+@login_required
+def some_view(request):
+    profile = request.profile if request.user.is_authenticated else None
+    return render(request, 'base.html', {'profile': profile})
