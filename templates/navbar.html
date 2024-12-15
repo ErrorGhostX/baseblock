@@ -1,20 +1,42 @@
 {% load static %}
-<nav class=" flex items-center justify-between p-8 h-50">
+<nav class="items-center justify-between p-8 h-50">
 
-    <!-- Логотип 
-    <div class="logo">
-        <img src="{% static 'minecraft/images/baseblock.png' %}" alt="Логотип проекта" class="h-16">
-    </div>-->
+        <!-- Логотип -->
+        <div class="logo flex justify-center items-center">
+            <img src="{% static 'minecraft/images/baseblock.png' %}" alt="Логотип проекта" class="h-28">
+        </div>
+
+
+        
+        <div class="fixed top-5 right-10 h-5 w-5">
+            <!-- Аватар -->
+            {% if user.is_authenticated %}
+            <a href="{% url 'profile' user.username %}" class="">
+                <img src="{{ profile.profile_image.url }}" alt="Аватар" class="object-cover h-10 w-10 rounded-full">
+            </a>
+            {% else %}
+            <a href="{% url 'login' %}" class="block w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
+                <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A8.978 8.978 0 0112 15c1.926 0 3.682.609 5.121 1.804M15 10a3 3 0 11-6 0 3 3 3 0 016 0zm9 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </a>
+            {% endif %}
+        </div>
+
+
+
         <!-- Бургер-меню -->
-        <div class="flex">
-            <button id="menu-toggle" class="fixed top-5 right-4 text-white bg-purple-600 p-3 cursor-pointer hover:bg-purple-700 focus:outline-none">
+
+        
+            <div id="menu-toggle" class="fixed top-5 right-4 text-white bg-purple-600 p-3 cursor-pointer hover:bg-purple-700 focus:outline-none">
+                
                 <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
-            </button>
+            </div>
 
           <!-- Скрытое меню -->
-           <ul id="menu" class="absolute right-0 top-16 bg-purple-900 text-white shadow-lg rounded-lg w-48 hidden flex-col space-y-2 p-4">
+           <ul id="menu" class="fixed right-0 top-16 bg-purple-900 text-white shadow-lg rounded-lg w-48 hidden flex-col space-y-2 p-4">
             <li><a href="{% url 'home' %}" class="block hover:text-purple-300 transition">Новости</a></li>
             <li><a href="{% url 'events' %}" class="block hover:text-purple-300 transition">Ивенты</a></li>
             <li><a href="{% url 'about' %}" class="block hover:text-purple-300 transition">О сервере</a></li>
@@ -29,6 +51,7 @@
                 <li><a href="{% url 'login' %}" class="block hover:text-purple-300 transition">Войти</a></li>
             {% endif %}
         </ul>
+
         <script>
 
         document.getElementById('menu-toggle').addEventListener('click', function () {

@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 
 <section class="max-w-4xl mx-auto bg-gray-800 text-purple-300 p-6 rounded-lg shadow-lg mt-8">
     <h2 class="text-2xl font-bold mb-4">Контакты</h2>
-    <p class="text-purple-200 text-lg">+77777</p>
+    <p class="text-purple-200 text-lg mb-6">support@baseblock.ru</p>
+    
+    <div class="flex space-x-4">
+        <!-- Иконка Discord -->
+        <a href="https://discord.gg/your-link" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition">
+            <img src="{% static 'minecraft/images/ds.svg' %}" alt="Discord" class="h-8 w-8">
+        </a>
+
+        <!-- Иконка Telegram -->
+        <a href="https://t.me/your-link" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition">
+            <img src="{% static 'minecraft/images/tg.svg' %}" alt="Telegram" class="h-8 w-8">
+        </a>
+
+        <!-- Иконка ВКонтакте 
+        <a href="https://vk.com/your-link" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition">
+            <img src="{% static 'minecraft/images/vk.svg' %}" alt="ВКонтакте" class="h-8 w-8">
+        </a>-->
+    </div>
 </section>
 
 {% endblock content %}

@@ -2,16 +2,15 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import get_user_model
 
-
-class LoginForm(AuthenticationForm):
-
-    class Meta:
-        model = get_user_model()
-        fields = ["username", "password"]
-
 from django import forms
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=150, label='Имя пользователя')
+    password = forms.CharField(widget=forms.PasswordInput, label='Пароль')
+
 
 class EditProfileForm(ModelForm):
     # Параметры для редактирования

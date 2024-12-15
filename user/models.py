@@ -6,15 +6,15 @@ from django.urls import reverse
 # Create your models here.
 class Donate(models.Model):
     name = models.CharField(
-        verbose_name="Наименование доната",
+        verbose_name="Наименование роли",
         max_length=50,
         blank=False,
         unique=True,
     )
-    responsobility = models.IntegerField("Сила доната", blank=False)
+    responsobility = models.IntegerField("Сила роли", blank=False)
     image = models.ImageField(
         blank=True,
-        verbose_name="Изображение доната",
+        verbose_name="Изображение роли",
         upload_to="donates/",
     )
 
@@ -22,8 +22,8 @@ class Donate(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Донат"
-        verbose_name_plural = "Донаты"
+        verbose_name = "Роли"
+        verbose_name_plural = "Роли"
 
 
 from django.db import models

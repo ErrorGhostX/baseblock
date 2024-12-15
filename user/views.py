@@ -29,52 +29,84 @@ from django.contrib.auth import login
 from user.custom_hashers import BCrypt2aPasswordHasher
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import redirect, render
+from django.urls import reverse, reverse_lazy
+from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic import DetailView
+from user.forms import RegisterForm, LoginForm, EditProfileForm
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import logout
+from django.views.generic import TemplateView
+from django.views.generic import ListView
+from django.http import Http404
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+from django.http import HttpRequest, HttpResponse
+from django.urls import reverse_lazy
+from django.contrib.auth import get_user_model
+from django.views.generic.edit import UpdateView
+from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import EditProfileForm
+
+
+
+from django.urls import reverse_lazy
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import get_user_model
+from django.views.generic import CreateView
+from .forms import RegisterForm
+from django.contrib.auth import login
+from django.shortcuts import redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
+from django.contrib.auth import get_user_model
+from .forms import RegisterForm  # Ваш RegisterForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate
+from django.http import HttpResponseRedirect
+from django.views.generic.edit import FormView
+
+
+from django.http import HttpResponseRedirect
+from django.views.generic.edit import FormView
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from .forms import LoginForm
+import bcrypt
+from user.models import Profile
 
 class LoginProfileView(FormView):
-    template_name = "user/login.html"
+    template_name = './user/login.html'  # ваш шаблон
     form_class = LoginForm
 
     def form_valid(self, form):
-        # Получаем введённые данные
         username = form.cleaned_data['username']
         password = form.cleaned_data['password']
 
-        # Пытаемся найти пользователя
-        user = get_user_model().objects.filter(username=username).first()
+        try:
+            # Пытаемся найти пользователя по имени в вашей модели
+            user = Profile.objects.get(username=username)  # Используйте вашу модель
+        except Profile.DoesNotExist:
+            form.add_error(None, "Неправильное имя пользователя или пароль")
+            return self.form_invalid(form)
 
-        if user:
-            # Инициализируем кастомный хешер
-            hasher = BCrypt2aPasswordHasher()
-
-            # Получаем пароль из базы данных
-            user_password = user.password
-
-            # Генерация хеша для проверки введённого пароля
-            hashed_password_for_check = hasher.encode(password, user_password.encode('utf-8'))
-
-            # Проверяем пароль с помощью кастомного метода verify
-            if hasher.verify(password, user.password):
-                # Если пароль корректный, авторизуем пользователя
-                login(self.request, user)
-                return redirect('profile', username=user.username)
-            else:
-                form.add_error('password', 'Неверный пароль.')
-
-            # Передаем данные в контекст для отображения в шаблоне
-            context = {
-                'form': form,
-                'user_password': user_password,
-                'hashed_password_for_check': hashed_password_for_check,
-            }
-            return render(self.request, self.template_name, context)
+        # Проверяем введённый пароль с хэшем в базе данных
+        hashed_password = user.password  # предполагается, что это bcrypt-хэш
+        if bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8')):
+            # Если пароль верный, логиним пользователя
+            login(self.request, user)
+            return HttpResponseRedirect(f'/profile/{user.username}/')
 
         else:
-            form.add_error('username', 'Пользователь не найден.')
-
-        return self.form_invalid(form)
-
-
-
+            # Если пароль неверный, возвращаем ошибку
+            form.add_error(None, "Неправильное имя пользователя или пароль")
+            return self.form_invalid(form)
 
 
 class RegisterView(CreateView):

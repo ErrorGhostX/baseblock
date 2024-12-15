@@ -123,9 +123,9 @@ AUTH_PASSWORD_VALIDATORS = [
 #PASSWORD_HASHERS = [
 #   'u.custom_hashers.BCrypt2aPasswordHasher',  # Замените myapp на имя вашего приложения
 #]
-PASSWORD_HASHERS = [
-    'user.custom_hashers.BCrypt2aPasswordHasher',
-]
+#PASSWORD_HASHERS = [
+    #   'user.custom_hashers.BCrypt2aPasswordHasher',
+#]
 
 
 
