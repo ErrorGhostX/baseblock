@@ -9,8 +9,15 @@ class EventAttendanceForm(forms.ModelForm):
             'participants': forms.CheckboxSelectMultiple(),  # Множественный выбор
         }
 
-from django import forms
+
 from .models import Event
+from django import forms
+from .models import Screenshot
+
+class ScreenshotForm(forms.ModelForm):
+    class Meta:
+        model = Screenshot
+        fields = ['image']
 
 class EventCreateForm(forms.ModelForm):
     class Meta:

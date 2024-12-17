@@ -5,8 +5,9 @@
     font-weight: normal;
 }
 
-*{word-break: break-all;
+*{word-break: break-word;
     hyphens: auto;
+    overflow-wrap: break-word;
 scrollbar-width: thin;
   scrollbar-color: rgb(192 132 252 / var(--tw-text-opacity, 1)) transparent; /* Цвет полосы прокрутки и трека (в нашем случае трек будет прозрачным) */
 /* Стили для скроллбара */

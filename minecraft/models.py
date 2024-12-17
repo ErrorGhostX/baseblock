@@ -2,12 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.conf import settings
-from django.db import models
 from django.utils.text import slugify
-from django import forms
-from django.db import models
-from django.contrib.auth.models import User
-
+from django.utils import timezone
 from django.db import models
 
 
@@ -71,16 +67,29 @@ class News(models.Model):
 
 
 
+class Screenshot(models.Model):
+    user = models.ForeignKey('user.Profile', on_delete=models.CASCADE, related_name="screenshots")  # Привязка к пользователю
+    image = models.ImageField(upload_to='screenshots/')  # Загрузка изображения
+    description = models.CharField(max_length=255, blank=True, null=True)  # Описание
+    uploaded_at = models.DateTimeField(auto_now_add=True)  # Время загрузки
+
+    def __str__(self):
+        return f"Скриншот от {self.user.username} - {self.description}"
+
+
+
 
 class Event(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Название ивента")
-    description = models.TextField(verbose_name="Описание ивента")
+    title = models.CharField(max_length=40, verbose_name="Название ивента")
+    description = models.TextField(max_length=500, verbose_name="Описание ивента")
     date = models.DateField(verbose_name="Дата проведения")
     time = models.TimeField(verbose_name="Время начала")
     time_create = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     is_active = models.BooleanField(default=True, verbose_name="Активный ивент")
     participants = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, related_name="events", blank=True
+        'user.Profile',
+        related_name='participated_events',
+        verbose_name="Участники"
     )
     slug = models.SlugField(unique=True, blank=True)
     location = models.CharField(
@@ -108,6 +117,17 @@ class Event(models.Model):
         null=True,
         blank=True
     )
+    STATUS_CHOICES = [
+        ('waiting', 'В ожидании'),
+        ('started', 'Начат'),
+        ('finished', 'Закончен'),
+    ]
+    status = models.CharField(
+        max_length=10,
+        choices=STATUS_CHOICES,
+        default='waiting',
+        verbose_name="Статус"
+    )
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -117,6 +137,10 @@ class Event(models.Model):
             while Event.objects.filter(slug=self.slug).exists():
                 self.slug = f"{original_slug}-{counter}"
                 counter += 1
+        if self.date < timezone.now().date() or (self.date == timezone.now().date() and self.time < timezone.now().time()):
+            raise ValueError("Невозможно создать ивент в прошлом")
+        if not self.status:
+            self.status = 'waiting'  # Статус "В ожидании"
         super().save(*args, **kwargs)
 
     def get_images(self):
@@ -134,21 +158,5 @@ class Event(models.Model):
 
 
 
-class Achievement(models.Model):
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        verbose_name="Игрок"
-    )
-    name = models.CharField(max_length=50, verbose_name="Название достижения")
-    description = models.TextField(verbose_name="Описание достижения")
-    earned_date = models.DateTimeField(auto_now_add=True, verbose_name="Дата получения")
-
-    def __str__(self):
-        return f"{self.user.username} - {self.name}"
-
-    class Meta:
-        verbose_name = "Достижение"
-        verbose_name_plural = "Достижения"
 
 

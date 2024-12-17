@@ -1,88 +1,28 @@
 
-from django.views.generic import DetailView
-from django.http import Http404
-from django.contrib.auth import logout
-from django.http import HttpRequest, HttpResponse
-from django.views.generic.edit import UpdateView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import EditProfileForm, LoginForm
 from django.db import connection
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from django.views.generic import CreateView
-from django.urls import reverse_lazy
-from .forms import RegisterForm
-from django.contrib.auth import login, get_user_model
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.hashers import check_password
-
-from django.shortcuts import redirect
-from django.views.generic.edit import FormView
-
-from django.contrib.auth import login
-from django.shortcuts import redirect
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import get_user_model
-from user.custom_hashers import BCrypt2aPasswordHasher  # Импортируем кастомный хешер
-
-from django.contrib.auth import login
-from user.custom_hashers import BCrypt2aPasswordHasher
-from django.shortcuts import render, redirect
-from django.contrib.auth import get_user_model
-from django.http import HttpRequest, HttpResponse
-from django.shortcuts import redirect, render
-from django.urls import reverse, reverse_lazy
-from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
-from user.forms import RegisterForm, LoginForm, EditProfileForm
-from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib.auth import logout
-from django.views.generic import TemplateView
-from django.views.generic import ListView
 from django.http import Http404
 from django.contrib.auth import logout
-from django.shortcuts import redirect
 from django.http import HttpRequest, HttpResponse
-from django.urls import reverse_lazy
-from django.contrib.auth import get_user_model
 from django.views.generic.edit import UpdateView
-from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import EditProfileForm
-
-
-
-from django.urls import reverse_lazy
-
 from django.shortcuts import render, redirect
-from django.contrib.auth import get_user_model
-from django.views.generic import CreateView
-from .forms import RegisterForm
-from django.contrib.auth import login
 from django.shortcuts import redirect
-from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth import get_user_model
-from .forms import RegisterForm  # Ваш RegisterForm
-from django.contrib.auth.forms import AuthenticationForm
+from .forms import RegisterForm
 from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import FormView
-
-
-from django.http import HttpResponseRedirect
-from django.views.generic.edit import FormView
 from django.contrib.auth import login
-from django.contrib.auth.models import User
 from .forms import LoginForm
 import bcrypt
 from user.models import Profile
 
 class LoginProfileView(FormView):
-    template_name = './user/login.html'  # ваш шаблон
+    template_name = './user/login.html'
     form_class = LoginForm
 
     def form_valid(self, form):
@@ -91,13 +31,13 @@ class LoginProfileView(FormView):
 
         try:
             # Пытаемся найти пользователя по имени в вашей модели
-            user = Profile.objects.get(username=username)  # Используйте вашу модель
+            user = Profile.objects.get(username=username)
         except Profile.DoesNotExist:
             form.add_error(None, "Неправильное имя пользователя или пароль")
             return self.form_invalid(form)
 
         # Проверяем введённый пароль с хэшем в базе данных
-        hashed_password = user.password  # предполагается, что это bcrypt-хэш
+        hashed_password = user.password
         if bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8')):
             # Если пароль верный, логиним пользователя
             login(self.request, user)
@@ -112,15 +52,15 @@ class LoginProfileView(FormView):
 class RegisterView(CreateView):
     form_class = RegisterForm
     template_name = 'user/register.html'
-    success_url = '/'  # Здесь пока будет главная страница (можно будет поменять)
+    success_url = '/'
 
     def form_valid(self, form):
         # Сохраняем форму и логиним пользователя
         user = form.save()
         login(self.request, user)
 
-        # Перенаправляем на профиль пользователя
-        return redirect('profile', username=user.username)  # Это исправление
+
+        return redirect('profile', username=user.username)
 
     def get_success_url(self):
         return reverse_lazy('profile', kwargs={'username': self.request.user.username})
@@ -141,20 +81,9 @@ class ProfileView(DetailView):
             raise Http404("Пользователь не найден")
 
 
-
-
-
-
-
-
-
-
-
-
 def logout_profile(request: HttpRequest) -> HttpResponse:
     logout(request=request)
     return redirect("home")
-
 
 
 
@@ -172,11 +101,6 @@ class EditProfileView(LoginRequiredMixin, UpdateView):
 
     def form_invalid(self, form):
         return super().form_invalid(form)
-
-
-
-
-
 
 
 def import_users_from_auth():
@@ -216,12 +140,20 @@ def import_users_from_auth():
 
 
 def login_view(request):
-    # Вызов функции для импорта пользователей из auth таблицы
-    # Вызов функции для импорта пользователей из auth таблицы
     import_users_from_auth()
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password"]
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect("home")  # Редирект после успешного входа
+            else:
+                # Добавление ошибки в форму
+                form.add_error(None, "Неверное имя пользователя или пароль")
+    else:
+        form = LoginForm()
 
-    # Возвращаем страницу login.html
-    return render(request, './user/login.html')
-from django.shortcuts import render
-
-
+    return render(request, "user/login.html", {"form": form})

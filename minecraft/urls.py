@@ -1,6 +1,4 @@
-from django.contrib.auth.decorators import login_required
-from django.urls import path
-import minecraft.views as views
+
 from django.views.decorators.cache import cache_page
 from django.urls import path
 from . import views
@@ -25,7 +23,13 @@ urlpatterns = [
     path("news/<int:server>/<slug:new>",cache_page(5 * 60)(views.NewPage.as_view()),name="new",),
     path('chat/', ollama_api.chat_view, name='chat'),
     path('event/<int:event_id>/leave/', views.leave_event, name='leave_event'),
-    path('event/<int:event_id>/mark_attendance/', views.mark_attendance, name='event_mark_attendance'),
+    path('event/<int:event_id>/mark_attendance/', views.event_mark_attendance, name='event_mark_attendance'),
     path('event/<int:event_id>/', views.event_detail, name='event_detail'),
     path('users/', views.user_list, name='user_list'),
+    path('event/<int:event_id>/start/', views.start_event, name='start_event'),
+    path('event/<int:event_id>/finish/', views.finish_event, name='finish_event'),
+    path('events/update_participants/<int:event_id>/', views.update_participants, name='update_participants'),
+    path('screenshots/', views.screenshots_page, name='view_screenshots'),
+    path('download-mods/', views.download_mods_page, name='download_mods_page'),  # Страница с кнопкой
+    path('download-mods/file/', views.download_mods, name='download_mods'),  # Маршрут для скачивания
 ]

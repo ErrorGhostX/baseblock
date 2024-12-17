@@ -1,14 +1,103 @@
 {% extends "base.html" %}
 {% block content %}
+<section class="max-w-6xl mx-auto bg-gray-900 bg-opacity-90 p-8 rounded-lg shadow-lg mt-6">
+    <h1 class="text-3xl font-bold text-purple-300 mb-6">Добро пожаловать на сервер BaseBlock!</h1>
+    <p class="text-purple-200 mb-6">
+        BaseBlock — это уникальный Minecraft-сервер с увлекательными режимами, интересными мини-играми, поддержкой модов, а также богатым функционалом для ролевой игры и взаимодействия между игроками.
+    </p>
 
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Что вы хотите узнать?</h2>
+    <ul class="text-purple-200 list-disc pl-5 space-y-3">
+        <li><a href="#survival" class="text-purple-400 hover:underline">Выживание</a></li>
+        <li><a href="#mini-games" class="text-purple-400 hover:underline">Мини-игры</a></li>
+        <li><a href="#mods" class="text-purple-400 hover:underline">Моды</a></li>
+        <li><a href="#auth" class="text-purple-400 hover:underline">Аутентификация</a></li>
+        <li><a href="#discord" class="text-purple-400 hover:underline">Дискорд и социальные боты</a></li>
+        <li><a href="#features" class="text-purple-400 hover:underline">Фишки</a></li>
+        <li><a href="#commands" class="text-purple-400 hover:underline">Команды</a></li>
+        <li><a href="#datapacks" class="text-purple-400 hover:underline">Датапаки</a></li>
+    </ul>
+</section>
 
-        <section class="max-w-4xl mx-auto bg-gray-900 bg-opacity-90 p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold text-purple-300 mb-4">О нас</h2>
-            <p class="text-purple-200">
-                Да да и дад и.
-            </p>
-        </section>
+<!-- Выживание -->
+<section id="survival" class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Выживание</h2>
+    <p class="text-purple-200">
+        Вы можете отыгрывать роли, строить города, участвовать в интересных ивентах. На сервере установлены плагины и датапаки для обогащения игрового опыта. Хотите попасть на сервер? Откройте тикет в дискорде в разделе 🎮попасть-на-сервер и расскажите немного о себе!
+    </p>
+</section>
 
+<!-- Мини-игры -->
+<section id="mini-games" class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Мини-игры</h2>
+    <p class="text-purple-200">
+        На сервере доступны увлекательные мини-игры:
+        <ul class="list-disc pl-5 space-y-2 mt-2">
+            <li><strong>MurderX</strong>: классическая игра в маньяка.</li>
+            <li><strong>FireSurv</strong>: выживание в экстремальных условиях.</li>
+        </ul>
+    </p>
+</section>
 
+<!-- Моды -->
+<section id="mods" class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Моды</h2>
+    <p class="text-purple-200">
+        Для лучшего погружения в игровой процесс рекомендуем установить моды. Скачать их можно по следующей ссылке:
+        <a href="https://drive.google.com/drive/folders/1rWtzuwSPwWVcAgNwL5oe8mFCXMvdu7dx?usp=sharing" class="text-purple-400 hover:underline">Скачать моды</a>.
+    </p>
+</section>
 
-{% endblock content %}
+<!-- Аутентификация -->
+<section id="auth" class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Аутентификация</h2>
+    <p class="text-purple-200">
+        Привяжите аккаунт Minecraft к Discord или Telegram для удобства и безопасности. Воспользуйтесь следующими ботами:
+        <ul class="list-disc pl-5 space-y-2 mt-2">
+            <li><strong>Discord Bot</strong>: @BaseBlock+</li>
+            <li><strong>Telegram Bot</strong>: <a href="https://t.me/baseblockbot" class="text-purple-400 hover:underline">https://t.me/baseblockbot</a></li>
+        </ul>
+    </p>
+</section>
+
+<!-- Дискорд -->
+<section id="discord" class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Дискорд</h2>
+    <p class="text-purple-200">
+        Общайтесь с другими игроками, узнавайте новости сервера и участвуйте в мероприятиях на нашем <a href="https://discord.gg/Xfk5enxYbj" class="text-purple-400 hover:underline">дискорд-сервере</a>.
+    </p>
+</section>
+
+<!-- Фишки -->
+<section id="features" class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Фишки</h2>
+    <ul class="text-purple-200 list-disc pl-5 space-y-2">
+        <li>Ползите, нажав два раза Shift при взгляде вниз.</li>
+        <li>Используйте подзорную трубу для установки меток.</li>
+        <li>Оставляйте свой ник на предметах с помощью красителя и наковальни.</li>
+    </ul>
+</section>
+
+<!-- Команды -->
+<section id="commands" class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Команды</h2>
+    <p class="text-purple-200">
+        Список полезных команд сервера:
+        <ul class="list-disc pl-5 space-y-2 mt-2">
+            <li>/server — переключение между серверами.</li>
+            <li>/sit — сесть на пол.</li>
+            <li>/lay — лечь на пол.</li>
+            <li>/spin — вращение на месте.</li>
+            <li>/do, /try — ролевые команды.</li>
+        </ul>
+    </p>
+</section>
+
+<!-- Датапаки -->
+<section id="datapacks" class="max-w-6xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mt-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">Датапаки</h2>
+    <p class="text-purple-200">
+        Украшайте свои постройки с помощью специальных датапаков. Подробнее в нашем дискорде.
+    </p>
+</section>
+{% endblock %}

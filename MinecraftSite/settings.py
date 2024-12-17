@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-76i4w1mtyfu#rmy*1yb)a1y$(!ho-k9t0vfr=n#m!zzv^#0h3j
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ["https://baseblock.ru"]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "tailwind",
     "theme",
     'django_browser_reload',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,9 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
-
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 0  # Отключить кэш для всех страниц
+CACHE_MIDDLEWARE_KEY_PREFIX = ''
 ROOT_URLCONF = "MinecraftSite.urls"
 
 TEMPLATES = [
@@ -74,10 +77,18 @@ TEMPLATES = [
         },
     },
 ]
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 WSGI_APPLICATION = "MinecraftSite.wsgi.application"
 NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
-
+ASGI_APPLICATION = "MinecraftSite.asgi.application"
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [

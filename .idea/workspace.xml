@@ -4,33 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f6a783-0b70-4891-9bef-fa0a1f3ba625" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MinecraftSite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MinecraftSite.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="72f6a783-0b70-4891-9bef-fa0a1f3ba625" name="Changes" comment="v3">
+      <change afterPath="$PROJECT_DIR$/MinecraftSite/consumers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MinecraftSite/routing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/migrations/0005_delete_achievement.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/book-enchanted.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/book-normal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/book-writable.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/book-written.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/compass.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/diamond.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/emerald.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/map-filled.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/menu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/menu2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/minecart-command-block.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/noavatar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/painting.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/paper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/ruby.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/sign.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/static/minecraft/images/yt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/download_mods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/view_screenshots.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/mods/mods.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0015_achievement_roles_profile_achievement_profile_role.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0016_сonviction_rename_roles_role_profile_сonviction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0017_conviction_remove_profile_сonviction_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0018_alter_profile_conviction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0019_alter_profile_conviction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0020_alter_profile_conviction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MinecraftSite/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/MinecraftSite/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MinecraftSite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MinecraftSite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/static/minecraft/css/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/static/minecraft/css/font.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/chat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/donate.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/donate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/event_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/event_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/events.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/rules.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/rules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/templates/minecraft/user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/templates/minecraft/user_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minecraft/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theme/static/css/dist/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/static/css/dist/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
@@ -42,6 +68,14 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,22 +101,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.MinecraftSite.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "sql+limbo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.MinecraftSite.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sql+limbo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;A:/Studying/RINH_3_KURS/web - програмирование/Курсач/MinecraftSite/minecraft/static/mods&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\static\mods" />
+      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\static\minecraft\images" />
+      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\templates\minecraft" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\static" />
+      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\MinecraftSite" />
+      <recent name="A:\Studying\RINH_3_KURS\web - програмирование\Курсач\MinecraftSite\minecraft\tamplatetags" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MinecraftSite" type="Python.DjangoServer" factoryName="Django server">
       <module name="MinecraftSite" />
@@ -101,7 +150,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
-      <option name="host" value="0.0.0.0" />
+      <option name="host" value="localhost" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -128,11 +177,33 @@
       <option name="presentableId" value="Default" />
       <updated>1734268809424</updated>
       <workItem from="1734268811064" duration="84000" />
-      <workItem from="1734268905749" duration="19113000" />
+      <workItem from="1734268905749" duration="21428000" />
+      <workItem from="1734298324687" duration="8489000" />
+      <workItem from="1734334179203" duration="12781000" />
+      <workItem from="1734382376796" duration="320000" />
+      <workItem from="1734382714385" duration="111000" />
+      <workItem from="1734382846592" duration="232000" />
+      <workItem from="1734383103877" duration="115000" />
+      <workItem from="1734383233631" duration="64000" />
+      <workItem from="1734383310871" duration="32554000" />
+      <workItem from="1734448925768" duration="11621000" />
     </task>
+    <task id="LOCAL-00001" summary="v3">
+      <option name="closed" value="true" />
+      <created>1734295680710</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734295680710</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="v3" />
   </component>
 </project>

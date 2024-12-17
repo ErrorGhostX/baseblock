@@ -1,15 +1,8 @@
+
 from django.test import TestCase
 from django.urls import reverse
 from minecraft.models import Servers, News
 
-
-# Create your tests here.
-from django.test import TestCase
-from django.urls import reverse
-from minecraft.models import Servers, News
-
-
-# Create your tests here.
 class NewsTestCase(TestCase):
 
     def test_home_case(self):

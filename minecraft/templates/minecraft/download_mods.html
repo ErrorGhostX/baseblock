@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-8 bg-gray-900 bg-opacity-90 max-w-6xl mx-auto p-6 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-white mb-6">Скачать архив с модами</h1>
+    
+    <p class="text-white mb-4">Нажмите на кнопку ниже, чтобы скачать архив с модами для Minecraft:</p>
+    
+    <a href="{% url 'download_mods' %}" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg shadow-lg transition">
+        Скачать моды
+    </a>
+</div>
+{% endblock %}

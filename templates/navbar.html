@@ -20,9 +20,7 @@
             </a>
             {% else %}
             <a href="{% url 'login' %}" class="flex items-center justify-center rounded-lg border border-purple-800  h-full overflow-hidden">
-                <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A8.978 8.978 0 0112 15c1.926 0 3.682.609 5.121 1.804M15 10a3 3 0 11-6 0 3 3 3 0 016 0zm9 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+             <img src="{% static 'minecraft/images/noavatar.svg' %}" alt="Discord" class="h-8 w-8">
             </a>
             {% endif %}
 
@@ -32,28 +30,77 @@
         <!-- Бургер-меню -->
 
         <div class="relative text-white h-full">
-            <button id="menu-toggle" class="flex rounded-lg justify-center items-center w-full h-full bg-purple-600 p-3 cursor-pointer hover:bg-purple-700 focus:outline-none">
-                
-                <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
+            <button id="menu-toggle" class="flex rounded-lg justify-center items-center w-full h-full bg-purple-600  cursor-pointer hover:bg-purple-700 focus:outline-none">
+                <img src="{% static 'minecraft/images/compass.svg' %}" alt="Discord" class="h-full w-full">
             </button>
              <!-- Скрытое меню -->
-           <ul id="menu" class="absolute right-0 top-16 bg-purple-900 text-white shadow-lg rounded-lg w-48 hidden flex-col space-y-2 p-4">
-            <li><a href="{% url 'home' %}" class="block hover:text-purple-300 transition">Новости</a></li>
-            <li><a href="{% url 'events' %}" class="block hover:text-purple-300 transition">Ивенты</a></li>
-            <li><a href="{% url 'about' %}" class="block hover:text-purple-300 transition">О сервере</a></li>
-            <li><a href="{% url 'contacts' %}" class="block hover:text-purple-300 transition">Контакты</a></li>
-            <li><a href="{% url 'donate' %}" class="block hover:text-purple-300 transition">Донат</a></li>
-            <li><a href="{% url 'rules' %}" class="block hover:text-purple-300 transition">Правила</a></li>
-            <li><a href="{% url 'user_list' %}" class="block hover:text-purple-300 transition">Игроки</a></li>
-            <li><a href="{% url 'map' %}" class="block hover:text-purple-300 transition">Карта</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'profile' user.username %}" class="block hover:text-purple-300 transition">Профиль</a></li>
-            {% else %}
-                <li><a href="{% url 'login' %}" class="block hover:text-purple-300 transition">Войти</a></li>
-            {% endif %}
-        </ul>
+            <ul id="menu" class="absolute right-0 top-16 bg-purple-900 text-white shadow-lg rounded-lg w-48 hidden flex-col space-y-2 p-4">
+                <li>
+                    <a href="{% url 'home' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        Новости
+                        <img src="{% static 'minecraft/images/paper.svg' %}" alt="Новости" class="ml-2 w-8 h-8">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        О сервере
+                        <img src="{% static 'minecraft/images/book-normal.svg' %}" alt="О сервере" class="ml-2 w-8 h-8">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'rules' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        Правила
+                        <img src="{% static 'minecraft/images/book-written.svg' %}" alt="Правила" class="ml-2 w-8 h-8">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'events' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        Ивенты
+                        <img src="{% static 'minecraft/images/book-writable.svg' %}" alt="Ивенты" class="ml-2 w-8 h-8">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'map' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        Карта
+                        <img src="{% static 'minecraft/images/map-filled.svg' %}" alt="Карта" class="ml-2 w-8 h-8">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'contacts' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        Контакты
+                        <img src="{% static 'minecraft/images/sign.svg' %}" alt="Контакты" class="ml-2 w-8 h-8">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'view_screenshots' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        Скриншоты
+                        <img src="{% static 'minecraft/images/painting.svg' %}" alt="Скриншоты" class="ml-2 w-8 h-8">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'download_mods_page' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        Моды
+                        <img src="{% static 'minecraft/images/minecart-command-block.svg' %}" alt="Моды" class="ml-2 w-8 h-8">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'donate' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        Донат
+                        <img src="{% static 'minecraft/images/ruby.svg' %}" alt="Донат" class="ml-2 w-8 h-8">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'user_list' %}" class="flex items-center justify-between hover:text-purple-300 transition hover:scale-110">
+                        Игроки
+                    </a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' user.username %}" class="block hover:text-purple-300 transition hover:scale-110">Профиль</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}" class="block hover:text-purple-300 transition hover:scale-110">Войти</a></li>
+                {% endif %}
+            </ul>
+
         </div>
 
 

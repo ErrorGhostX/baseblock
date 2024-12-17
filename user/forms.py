@@ -6,7 +6,6 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
 
-
 class LoginForm(forms.Form):
     username = forms.CharField(
         max_length=150,
