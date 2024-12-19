@@ -68,10 +68,10 @@ class News(models.Model):
 
 
 class Screenshot(models.Model):
-    user = models.ForeignKey('user.Profile', on_delete=models.CASCADE, related_name="screenshots")  # Привязка к пользователю
-    image = models.ImageField(upload_to='screenshots/')  # Загрузка изображения
-    description = models.CharField(max_length=255, blank=True, null=True)  # Описание
-    uploaded_at = models.DateTimeField(auto_now_add=True)  # Время загрузки
+    user = models.ForeignKey('user.Profile', on_delete=models.CASCADE, related_name="screenshots")
+    image = models.ImageField(upload_to='screenshots/')
+    description = models.CharField(max_length=255, blank=True, null=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Скриншот от {self.user.username} - {self.description}"
@@ -140,7 +140,7 @@ class Event(models.Model):
         if self.date < timezone.now().date() or (self.date == timezone.now().date() and self.time < timezone.now().time()):
             raise ValueError("Невозможно создать ивент в прошлом")
         if not self.status:
-            self.status = 'waiting'  # Статус "В ожидании"
+            self.status = 'waiting' 
         super().save(*args, **kwargs)
 
     def get_images(self):
