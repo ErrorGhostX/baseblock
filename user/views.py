@@ -125,9 +125,9 @@ def import_users_from_auth():
             )
 
             if created:
-                # Профиль уже привязан к пользователю через AbstractUser, он не нуждается в создании вручную
+
                 user.profile_image = 'media/MinecraftLogo.png'  # Устанавливаем дефолтное изображение
-                user.donate = None  # В зависимости от вашей логики
+                user.donate = None
                 user.description = "Описание отсутствует"
                 user.city = "Не указан"
                 user.social_rating = 0

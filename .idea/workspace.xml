@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f6a783-0b70-4891-9bef-fa0a1f3ba625" name="Changes" comment="na server!">
+    <list default="true" id="72f6a783-0b70-4891-9bef-fa0a1f3ba625" name="Changes" comment="Aztual">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minecraft/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theme/static/css/dist/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/theme/static/css/dist/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minecraft/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/minecraft/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +28,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="sql+limbo" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -57,7 +64,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;com.codeium.enabled&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sql+limbo&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;yarik-lox&quot;,
     &quot;last_opened_file_path&quot;: &quot;A:/Studying/RINH_3_KURS/web - програмирование/Курсач/MinecraftSite/minecraft/static/mods&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -137,6 +144,21 @@
       <workItem from="1734448925768" duration="12639000" />
       <workItem from="1734482018700" duration="3092000" />
       <workItem from="1734520458947" duration="5175000" />
+      <workItem from="1734600558502" duration="104000" />
+      <workItem from="1734852723247" duration="128000" />
+      <workItem from="1735989349408" duration="8013000" />
+      <workItem from="1736121347697" duration="648000" />
+      <workItem from="1736192676655" duration="2464000" />
+      <workItem from="1736799592515" duration="2163000" />
+      <workItem from="1736867204900" duration="808000" />
+      <workItem from="1736897601348" duration="6765000" />
+      <workItem from="1736935608571" duration="65000" />
+      <workItem from="1736935681707" duration="502000" />
+      <workItem from="1741172633492" duration="138000" />
+      <workItem from="1748282246065" duration="657000" />
+      <workItem from="1765320604556" duration="2243000" />
+      <workItem from="1768153471546" duration="624000" />
+      <workItem from="1768174629249" duration="79000" />
     </task>
     <task id="LOCAL-00001" summary="v3">
       <option name="closed" value="true" />
@@ -162,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734471936130</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Aztual">
+      <option name="closed" value="true" />
+      <created>1734600580440</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734600580441</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +203,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="yarik-lox" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -182,6 +224,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v3" />
     <MESSAGE value="na server!" />
-    <option name="LAST_COMMIT_MESSAGE" value="na server!" />
+    <MESSAGE value="Aztual" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aztual" />
   </component>
 </project>

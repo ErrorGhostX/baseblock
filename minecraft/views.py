@@ -184,12 +184,11 @@ def download_mods_page(request):
     return render(request, 'minecraft/download_mods.html')
 def download_mods(request):
     # Путь к архиву
-    mod_archive_path = os.path.join(settings.BASE_DIR, 'static', 'mods', 'mods.zip')  # Убедитесь, что архив находится по этому пути
-
+    mod_archive_path = os.path.join(settings.BASE_DIR, 'static', 'mods', 'mods.zip')
     if os.path.exists(mod_archive_path):
         with open(mod_archive_path, 'rb') as file:
             response = HttpResponse(file.read(), content_type='application/zip')
-            response['Content-Disposition'] = 'attachment; filename="mods.zip"'  # Название файла, который будет скачан
+            response['Content-Disposition'] = 'attachment; filename="mods.zip"'
             return response
     else:
         return HttpResponse("Архив с модами не найден.", status=404)

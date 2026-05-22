@@ -122,8 +122,7 @@ class Profile(AbstractUser):
         "Achievement",
         related_name="achive",
         verbose_name="Достижение пользователя",
-        default=None,
-        null=True,
+        blank=True,
     )
     conviction = models.ManyToManyField(
         "Conviction",

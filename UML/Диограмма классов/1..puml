@@ -1,0 +1,85 @@
+@startuml
+
+class Servers {
+  + name: CharField(max_length=30)
+  + slug: SlugField(max_length=25)
+  + max_online: IntegerField
+}
+
+class News {
+  + title: CharField(max_length=40)
+  + text: TextField
+  + image: ImageField
+  + time_create: DateTimeField
+  + time_update: DateTimeField
+  + slug: SlugField
+  + is_published: BooleanField
+}
+
+class Screenshot {
+  + image: ImageField
+  + description: CharField(max_length=255)
+  + uploaded_at: DateTimeField
+}
+
+class Event {
+  + title: CharField(max_length=40)
+  + description: TextField
+  + date: DateField
+  + time: TimeField
+  + time_create: DateTimeField
+  + is_active: BooleanField
+  + slug: SlugField
+  + location: CharField
+  + coordinates: CharField
+  + status: CharField
+  + image1: ImageField
+  + image2: ImageField
+  + image3: ImageField
+}
+
+class Donate {
+  + name: CharField(max_length=50)
+  + responsobility: IntegerField
+  + image: ImageField
+}
+
+class Role {
+  + name: CharField(max_length=50)
+  + responsobility: IntegerField
+  + image: ImageField
+}
+
+class Achievement {
+  + name: CharField(max_length=50)
+  + description: TextField
+  + earned_date: DateTimeField
+  + image: ImageField
+}
+
+class Conviction {
+  + name: CharField(max_length=50)
+  + description: TextField
+  + earned_date: DateTimeField
+  + image: ImageField
+}
+
+class Profile {
+  + username: CharField
+  + email: CharField
+  + profile_image: ImageField
+  + description: TextField
+  + city: CharField
+  + social_rating: IntegerField
+}
+
+Servers "1" --> "0..*" News : server
+Screenshot "0..*" --> "1" Profile : user
+Event "0..*" --> "0..*" Profile : participated_events
+Event "0..1" --> "1" Profile : author
+Profile "0..1" --> "1" Donate : donate
+Profile "0..1" --> "1" Role : role
+Profile "0..*" --> "0..*" Achievement
+Profile "0..*" --> "0..*" Conviction
+
+@enduml
