@@ -5,3 +5,5 @@ media/media/profiles/*
 media/donate/*
 **__pycache__
 node_modules
+/node_modules/
+/static/mods/mods.zip
